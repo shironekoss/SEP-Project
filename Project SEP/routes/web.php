@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('selenium')->group(function (){
+    Route::get('/', function () {
+        return view('selenium');
+    });
+    // Route::post('/dologin', [LoginRegisterController::class,'dologin']);
+});
