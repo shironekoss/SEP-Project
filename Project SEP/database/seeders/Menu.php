@@ -15,7 +15,7 @@ class Menu extends Seeder
      */
     public function run()
     {
-            DB::table('menu')->insert(
+            DB::table('menu')->insert([
             [
             'nama_menu'=>"Cheese Mixed Soba",
             'harga_menu'=>35000,
@@ -89,13 +89,6 @@ class Menu extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
              ],[
-                'nama_menu'=>"Oreryu Yuzu Shio-Ramen",
-                'harga_menu'=>50000,
-                'deskripsi_menu'=>"Oreryu Yuzu Shio-Ramen adalah Ramen asin dengan ekstrak lemon Yuzu membuat kombinasi yang sangat bagus dengan bahan dasar sup yang lembut, dan kami menggunakannya banyak untuk ramen ini. Topping mustard menghadirkan rasa yang menyegarkan untuk hidangan ini",
-                'foto_menu'=>'Oreryu Yuzu Shio-Ramen.png',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-             ],[
                 'nama_menu'=>"Oreryu Miso-Ramen",
                 'harga_menu'=>49000,
                 'deskripsi_menu'=>"Oreryu Miso-Ramen dibuat dengan menambahkan banyak pasta wijen spesial ke dalam dasar sup miso merah untuk membuat ramen ini. Ini adalah ramen yang populer di kalangan penggemar berat, karena rasanya yang sangat unik.",
@@ -152,6 +145,6 @@ class Menu extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
              ],
-        );
+            ]);
     }
 }

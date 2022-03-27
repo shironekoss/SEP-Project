@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menu', function (Blueprint $table) {
-            $table->bigIncrements('menu_id');
-            $table->string('nama_menu',50)->unique();
-            $table->integer('harga_menu');
-            $table->longText('deskripsi_menu');
-            $table->string('foto_menu');
-            $table->timestamps();
+        Schema::create('akun', function (Blueprint $table) {
+            $table->bigIncrements('akun_id');
+            $table->string('akun_user',12)->unique();
+            $table->string('akun_nama',20);
+            $table->string('akun_password',20);
+            $table->string('akun_role',20);
+            $table->string('status',20);
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu');
+        Schema::dropIfExists('akun');
     }
 };

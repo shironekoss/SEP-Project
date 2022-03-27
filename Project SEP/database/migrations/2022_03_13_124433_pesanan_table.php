@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('pesanan', function (Blueprint $table) {
             $table->bigIncrements('pesanan_id');
             $table->bigInteger('antrian_id')->unsigned();
-            $table->bigInteger('meja_id')->unsigned();
+            $table->unsignedBigInteger('meja_id')->unsigned();
             $table->bigInteger('karyawan_id')->unsigned();
             $table->foreign('antrian_id')->references('antrian_id')->on('antrian');
-            $table->foreign('meja_id')->references('meja_id')->on('meja');
-            $table->foreign('karyawan_id')->references('karyawan_id')->on('karyawan');
+            $table->foreign('meja_id')->references('akun_id')->on('akun')->onDelete('cascade');
+            $table->foreign('karyawan_id')->references('akun_id')->on('akun')->onDelete('cascade');
             $table->date('tgl_pesanan');
             $table->dateTime('waktu_pesanan');
             $table->string('status_pesanan',50);
@@ -32,8 +32,8 @@ return new class extends Migration
             $table->bigIncrements('pesanandetail_id');
             $table->bigInteger('pesanan_id')->unsigned();
             $table->bigInteger('menu_id')->unsigned();
-            $table->foreign('pesanan_id')->references('pesanan_id')->on('pesanan');
-            $table->foreign('menu_id')->references('menu_id')->on('menu');
+            $table->foreign('pesanan_id')->references('pesanan_id')->on('pesanan')->onDelete('cascade');
+            $table->foreign('menu_id')->references('menu_id')->on('menu')->onDelete('cascade');
             $table->integer('harga_menu');
             $table->integer('quantity_menu');
             $table->string('Catatan_menu');
@@ -49,5 +49,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('pesanan');
+        Schema::dropIfExists('pesanan_detail');
     }
 };
