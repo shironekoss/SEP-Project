@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            Menu::class
+            Menu::class,
+            Akun::class,
+            Methodpayment::class
         ]);
     }
 }
