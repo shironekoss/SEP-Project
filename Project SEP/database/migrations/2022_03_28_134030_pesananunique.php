@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pesanan', function (Blueprint $table) {
-            $table->bigIncrements('pesanan_id');
+        Schema::create('pesananunique', function (Blueprint $table) {
+            $table->bigIncrements('pesananunique_id');
             $table->bigInteger('antrian_id')->unsigned();
             $table->bigInteger('meja_id')->unsigned();
             $table->bigInteger('karyawan_id')->unsigned();
@@ -29,16 +29,17 @@ return new class extends Migration
             $table->integer('grandtotal_pesanan');
         });
 
-        Schema::create('pesanan_detail', function (Blueprint $table) {
-            $table->bigIncrements('pesanandetail_id');
-            $table->bigInteger('pesanan_id')->unsigned();
-            $table->bigInteger('menu_id')->unsigned();
-            $table->foreign('pesanan_id')->references('pesanan_id')->on('pesanan')->onDelete('cascade');
-            $table->foreign('menu_id')->references('menu_id')->on('menu')->onDelete('cascade');
-            $table->integer('harga_menu');
-            $table->integer('quantity_menu');
-            $table->string('Catatan_menu');
-            $table->integer('subtotal_pesanan');
+
+        Schema::create('pesananuniquedetail', function (Blueprint $table) {
+            $table->bigIncrements('pesananuniquedetail_id');
+            $table->bigInteger('pesananunique_id')->unsigned();
+            $table->bigInteger('bahan_id')->unsigned();
+            $table->foreign('pesananuniquedetail_id')->references('pesananunique_id')->on('pesananunique')->onDelete('cascade');
+            $table->foreign('bahan_id')->references('bahan_id')->on('bahan')->onDelete('cascade');
+            $table->integer('harga_bahan');
+            $table->integer('quantity_bahan');
+            $table->string('Catatan_bahan');
+            $table->integer('subtotal_pesananunique');
         });
     }
 
@@ -49,7 +50,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesanan');
-        Schema::dropIfExists('pesanan_detail');
+        Schema::dropIfExists('pesananunique');
+        Schema::dropIfExists('pesananuniquedetail');
     }
 };

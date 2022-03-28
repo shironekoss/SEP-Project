@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('akun', function (Blueprint $table) {
-            $table->bigIncrements('akun_id');
-            $table->string('akun_user',12)->unique();
-            $table->string('akun_nama',20);
-            $table->string('akun_password',10);
-            $table->string('akun_role',20);
-            $table->string('status',20);
+        Schema::create('bahan', function (Blueprint $table) {
+            $table->bigIncrements('bahan_id');
+            $table->string('nama_bahan',50)->unique();
+            $table->bigInteger('harga_bahan');
+            $table->string('satuan_bahan',20);
+            $table->longText('deskripsi_bahan');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('akun');
+        Schema::dropIfExists('bahan');
     }
 };
