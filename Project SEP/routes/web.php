@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Home;
 use App\Http\Controllers\logonController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('selenium');
 });
 
 Route::prefix('selenium')->group(function (){
-    Route::get('/', function () {
-        return view('selenium');
-    });
+    Route::get('/', [Home::class, "home"]);
     Route::get('login', function () {
         return view('login');
     });

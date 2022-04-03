@@ -36,7 +36,7 @@ class Menu extends Seeder
                 'harga_menu'=>30000,
                 'deskripsi_menu'=>"Ini adalah semangkuk ramen dengan 1 potongan daging ayam yang besar, dan daun bawang yang
                 dibuat perlahan dengan api kecil. Ini adalah ramen asin yang lembut dengan banyak umami dan rasa manis",
-                'foto_menu'=>'Salt Ramen',
+                'foto_menu'=>'Salt Ramen.png',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
              ],[

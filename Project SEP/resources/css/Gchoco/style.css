@@ -516,7 +516,6 @@ ul.email li i {
     color: #181717;
     font-weight: 900;
     padding-bottom: 10px;
-    s
 }
 
 .designer span {
@@ -570,7 +569,7 @@ ul.email li i {
   left: inherit;
 }
 
-#carouselExampleIndicators .carousel-control-next, 
+#carouselExampleIndicators .carousel-control-next,
 #carouselExampleIndicators .carousel-control-prev {
   background: #432b1f;
   opacity: 1;
@@ -656,7 +655,7 @@ ul.email li i {
   line-height: 32px;
   font-weight: 600;
   text-transform: uppercase;
-  background: #382014;
+  background: red;
   display: ruby-base;
   padding: 20px 65px;
   margin: 20px auto 0;
