@@ -1,10 +1,9 @@
-
 <div class="orders left_cross_right">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="titlepage text_align_center">
-                    <h2>FREE STANDARD ORDERS </h2>
+                    <h2>Best Ramen </h2>
                 </div>
             </div>
         </div>
@@ -16,8 +15,6 @@
                         <li data-target="#ordersid" data-slide-to="1"></li>
                         <li data-target="#ordersid" data-slide-to="2"></li>
                     </ol>
-
-
  <div class="carousel-inner">
 {{-- untuk pengecekkan carousel --}}
     <?php
