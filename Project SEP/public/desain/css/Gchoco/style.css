@@ -15,17 +15,17 @@
 
 /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
 
-@import url(animate.min.css);
-@import url(normalize.css);
+/* @import url(animate.min.css); */
+/* @import url(normalize.css); */
 @import url(icomoon.css);
 @import url(font-awesome.min.css);
-@import url(meanmenu.css);
+/* @import url(meanmenu.css); */
 @import url(owl.carousel.min.css);
-@import url(swiper.min.css);
-@import url(slick.css);
-@import url(jquery.fancybox.min.css);
-@import url(jquery-ui.css);
-@import url(nice-select.css);
+/* @import url(swiper.min.css); */
+/* @import url(slick.css); */
+/* @import url(jquery.fancybox.min.css); */
+/* @import url(jquery-ui.css); */
+/* @import url(nice-select.css); */
 @font-face {
     font-family: 'snellbold';
     src: url('../fonts/snellbt-bold-webfont.woff2') format('woff2'), url('../fonts/snellbt-bold-webfont.woff') format('woff');
@@ -244,6 +244,7 @@ button {
     padding: 0;
     display: inline-block;
     text-transform: uppercase;
+    padding-right: 100px;
 }
 
 .d_flex {
@@ -251,6 +252,8 @@ button {
     align-items: center;
     flex-wrap: wrap;
 }
+
+
 
 .read_more {
   background: #382014;
@@ -324,12 +327,13 @@ button {
 #content {
     width: 100%;
     position: relative;
+    align-items: center;
 }
 
-#content::before {
+/* #content::before {
     position: absolute;
     content: "";
-    width: 900px;
+    width: 1200px;
     height: 680px;
     background: url(../images/banner_top.png);
     top: 0;
@@ -337,7 +341,7 @@ button {
     right: 0;
     background-repeat: no-repeat;
     z-index: 1;
-}
+} */
 
 
 /*-- sidebar menu --*/
@@ -347,7 +351,7 @@ button {
   content: "";
   width: 22px;
   height: 100%;
-  background: url(../images/ri_croos.png);
+  background: url(../../../images/icon/ri_croos.png);
   right: -22px;
   background-position: center;
   z-index: 99;
@@ -671,12 +675,11 @@ ul.email li i {
 }
 
 .orders_box .read_more {
-    background: transparent;
-    color: #252525;
-    text-decoration: underline !important;
-    font-size: 20px;
     margin: 0 auto;
-    max-width: inherit;
+    line-height: 42px;
+    text-transform: uppercase;
+    background-color: rgb(27, 181, 112);
+    height: 42px;
 }
 
 .orders_box .read_more:hover {
@@ -1034,14 +1037,17 @@ ul.email li i {
     width: 100%;
     left: 0;
     height: 22px;
-    background: url(../images/croos.png);
+    /* background: url(../../../images/icon/—Pngtree—japanese\ ramen\ simple\ black\ banner_1000082.jpg); */
     top: -21px;
     background-position: center;
 }
 
 .footer {
     padding-top: 100px;
-    background: url(../images/footer_bg.png);
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),url(../../../images/icon/—Pngtree—japanese\ ramen\ simple\ black\ banner_1000082.jpg);
     background-size: 100% 100%;
     background-position: center;
     text-align: center;

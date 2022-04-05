@@ -6,16 +6,16 @@
     </div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="combos.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Home</a>
+            <a href="{{URL::to('/selenium')}}"> <i class="fa fa-angle-right" aria-hidden="true"></i>Home</a>
         </li>
         <li>
-            <a href="luxury.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Kustomisasi Pesanan</a>
+            <a href="{{URL::to('/selenium')}}/menu"> <i class="fa fa-angle-right" aria-hidden="true"></i>Menu</a>
         </li>
         <li>
-            <a href="sugarfree.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>About Us</a>
+            <a href="{{URL::to('/selenium')}}/customorder"> <i class="fa fa-angle-right" aria-hidden="true"></i>Custom Order</a>
         </li>
         <li>
-            <a href="contact.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>contact</a>
+            <a href="{{URL::to('/selenium')}}/aboutus"> <i class="fa fa-angle-right" aria-hidden="true"></i>Our Restaurant</a>
         </li>
     </ul>
 </nav>

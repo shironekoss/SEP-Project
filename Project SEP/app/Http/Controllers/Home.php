@@ -12,4 +12,9 @@ class Home extends Controller
         $listmenu = ModelsMENU::all();
         return view('Selenium',["listmenu"=>$listmenu]);
         }
+
+        public function aboutus(){
+            return view('aboutus');
+        }
+
 }
