@@ -17,4 +17,12 @@ class Home extends Controller
             return view('aboutus');
         }
 
+        public function menu(){
+            return view('menu');
+        }
+
+        public function customorder(){
+            return view('customorder');
+        }
+
 }
