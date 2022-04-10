@@ -14,11 +14,13 @@ class Home extends Controller
         }
 
         public function aboutus(){
+
             return view('aboutus');
         }
 
         public function menu(){
-            return view('menu');
+            $listmenu = ModelsMENU::orderby('updated_at','Desc')->Paginate(12);
+            return view('menu',["listmenu"=>$listmenu]);
         }
 
         public function customorder(){

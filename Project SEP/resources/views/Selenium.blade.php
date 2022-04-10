@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('desain/css/Gchoco/bootstrap.min.css') }}">
     <!-- style css -->
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
+    {{-- <link type="text/css" rel="stylesheet" href="{{ Ass('css/app.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('desain/css/Gchoco/style.css') }}">
     <!-- Responsive-->
     {{-- <link rel="stylesheet" href="css/responsive.css"> --}}
@@ -28,6 +29,8 @@
         media="screen">
     <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <script src="https://kit.fontawesome.com/1be6c09f76.js" crossorigin="anonymous"></script>
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -41,7 +44,10 @@
     </div>
     <!-- end loader -->
     <!-- header -->
+    @include('home.Header')
     <div class="wrapper">
+
+
         <!-- Sidebar -->
         @include('home.sidebar')
         <div id="content">
@@ -51,7 +57,7 @@
     <!-- end header -->
     <!-- orders section -->
 
-                        {{-- untuk home --}}
+    {{-- untuk home --}}
     @include('home.footer')
 
     <!-- end footer -->
