@@ -46,13 +46,35 @@
         @include('home.sidebar')
 
         <div class="aboutus">
+
+
             <div class="videoabout">
+                <div class="menuitemabout">
+                    <div class="tm-paging-links">
+                        <nav>
+                            <ul>
+                                <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Our Product</a></li>
+                                <li class="tm-paging-item"><a href="#" class="tm-paging-link">Sejarah</a></li>
+
+                                <li class="tm-paging-item"><a href="#" class="tm-paging-link">izakaya</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="textvideo">
+                            <div class="textvideo-judul">
+                                        <h1>OUR PRODUCT</h1>
+                            </div>
+                            <div class="textvideo-isi">
+                               <p> Menyediakan ramen yang mampu memikat banyak orang dari seluruh dunia. Disini kami menyediakan ramen yang  rasanya tidak jauh dari negara sakura. Anda tidak perlu repot lagi sampai harus mengunjungi Jepang untuk menyicipi semangkuk ramen. Kandungan ramen segar yang langsung dibuat di tempat dengan topping sayuran dan daging segar membuat ramen kami menjadi beberapa pilihan terbaik bagi sejumlah orang</p>
+                            </div>
+                    </div>
+                </div>
                 <video autoplay loop muted>
                     <source src={{ asset('video/ramenabout.mp4') }} type="video/mp4">
                 </video>
             </div>
         </div>
-            {{-- <div class="about-section">
+        {{-- <div class="about-section">
                 <h1>About Us Page</h1>
                 <p>Some text about who we are and what we do.</p>
                 <p>Resize the browser window to see that this page is responsive by the way.</p>
@@ -115,6 +137,23 @@
     <script type="text/javascript">
         baguetteBox.run('.tz-gallery');
     </script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on paging links
+            // $('.tm-paging-link').click(function(e) {
+            //     e.preventDefault();
+
+            //     var page = $(this).text().toLowerCase();
+            //     $('.tm-gallery-page').addClass('hidden');
+            //     $('#tm-gallery-page-' + page).removeClass('hidden');
+            //     $('.tm-paging-link').removeClass('active');
+            //     $(this).addClass("active");
+            // });
+
+        });
+    </script>
+
+
     <script type="text/javascript">
         $(document).ready(function() {
 
