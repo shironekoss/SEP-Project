@@ -1527,3 +1527,23 @@ ul.conta li a:hover {
       width: 100%;
     }
   }
+
+
+  .aboutus{
+      flex-grow: 1;
+  }
+
+  /* untuk video */
+  .videoabout {
+      width: inherit;
+      height: inherit;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .videoabout video{
+      flex-grow: 1;
+      object-fit: cover;
+  }
