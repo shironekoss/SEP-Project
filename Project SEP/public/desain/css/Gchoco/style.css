@@ -28,14 +28,14 @@
 /* @import url(nice-select.css); */
 @font-face {
     font-family: 'snellbold';
-    src: url('../fonts/snellbt-bold-webfont.woff2') format('woff2'), url('../fonts/snellbt-bold-webfont.woff') format('woff');
+    /* src: url('../fonts/snellbt-bold-webfont.woff2') format('woff2'), url('../fonts/snellbt-bold-webfont.woff') format('woff'); */
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'snellregular';
-    src: url('../fonts/snellbt-regular-webfont.woff2') format('woff2'), url('../fonts/snellbt-regular-webfont.woff') format('woff');
+    /* src: url('../fonts/snellbt-regular-webfont.woff2') format('woff2'), url('../fonts/snellbt-regular-webfont.woff') format('woff'); */
     font-weight: normal;
     font-style: normal;
 }
