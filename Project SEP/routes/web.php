@@ -24,7 +24,10 @@ Route::prefix('selenium')->group(function (){
     Route::get('aboutus', [Home::class, "aboutus"]);
     Route::get('menu', [Home::class, "menu"]);
     Route::get('customorder', [Home::class, "customorder"]);
+    Route::get('menu/{nama_menu}',[Home::class, "menudetail"]);
+    Route::post('menu/{nama_menu}/addpesanan',[Home::class, "addpesanan"]);
 
     Route::post('cekLogin', [logonController::class, 'cekLogin']);
+
     // Route::post('/dologin', [LoginRegisterController::class,'dologin']);
 });

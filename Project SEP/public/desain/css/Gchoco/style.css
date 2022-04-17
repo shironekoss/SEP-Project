@@ -21,6 +21,7 @@
 @import url(font-awesome.min.css);
 /* @import url(meanmenu.css); */
 @import url(owl.carousel.min.css);
+
 /* @import url(swiper.min.css); */
 /* @import url(slick.css); */
 /* @import url(jquery.fancybox.min.css); */
@@ -130,7 +131,7 @@ h4 a,
 h5 a,
 h6 a {
     color: #212121;
-    text-decoration: none!important;
+    text-decoration: none !important;
     opacity: 1
 }
 
@@ -175,7 +176,7 @@ img {
     height: auto;
 }
 
- :focus {
+:focus {
     outline: 0;
 }
 
@@ -256,17 +257,17 @@ button {
 
 
 .read_more {
-  background: #382014;
-  max-width: 240px;
-  height: 70px;
-  line-height: 70px;
-  display: block;
-  text-align: center;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  transition: ease-in all 0.5s;
-  text-transform: uppercase;
+    background: #382014;
+    max-width: 240px;
+    height: 70px;
+    line-height: 70px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: ease-in all 0.5s;
+    text-transform: uppercase;
 }
 
 .read_more:hover {
@@ -347,15 +348,15 @@ button {
 /*-- sidebar menu --*/
 
 #sidebar::before {
-  position: absolute;
-  content: "";
-  width: 22px;
-  height: 100%;
-  background: url(../../../images/icon/ri_croos.png);
-  right: -22px;
-  background-position: center;
-  z-index: 99;
-  top: 0;
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 100%;
+    background: url(../../../images/icon/ri_croos.png);
+    right: -22px;
+    background-position: center;
+    z-index: 99;
+    top: 0;
 }
 
 #sidebar {
@@ -491,10 +492,10 @@ ul.email li i {
 }
 
 .slider_main {
-  padding-top: 50px;
-  z-index: 99999;
-  position: relative;
-  padding: 0 90px 98px;
+    padding-top: 50px;
+    z-index: 99999;
+    position: relative;
+    padding: 0 90px 98px;
 }
 
 .relative {
@@ -570,20 +571,20 @@ ul.email li i {
 }
 
 #carouselExampleIndicators .carousel-control-prev {
-  right: 70px;
-  left: inherit;
+    right: 70px;
+    left: inherit;
 }
 
 #carouselExampleIndicators .carousel-control-next,
 #carouselExampleIndicators .carousel-control-prev {
-  background: #432b1f;
-  opacity: 1;
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  top: 92%;
-  font-size: 35px;
-  box-shadow: 0 0 62px rgba(30, 30, 30, 0.13);
+    background: #432b1f;
+    opacity: 1;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    top: 92%;
+    font-size: 35px;
+    box-shadow: 0 0 62px rgba(30, 30, 30, 0.13);
 }
 
 #carouselExampleIndicators .carousel-control-next:focus,
@@ -631,18 +632,18 @@ ul.email li i {
 }
 
 .price {
-  background: #382014;
-  width: 100px;
-  text-align: center;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: absolute;
-  z-index: 999999;
-  top: 15px;
-  right: 15px;
+    background: #382014;
+    width: 100px;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 999999;
+    top: 15px;
+    right: 15px;
 }
 
 .price span {
@@ -662,16 +663,16 @@ ul.email li i {
 }
 
 .party h5 {
-  color: #fff;
-  min-width: 100%;
-  min-height: 100%;
-  line-height: 32px;
-  font-weight: 600;
-  text-transform: uppercase;
-  background: #382014;
-  display: ruby-base;
-  padding: 15px 65px;
-  margin: 15px auto 0;
+    color: #fff;
+    min-width: 100%;
+    min-height: 100%;
+    line-height: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #382014;
+    display: ruby-base;
+    padding: 15px 65px;
+    margin: 15px auto 0;
 }
 
 .orders_box .read_more {
@@ -745,22 +746,22 @@ ul.email li i {
 }
 
 .cho_text h3 {
-  color: #323131;
-  font-size: 20px;
-  padding-top: 10px;
-  line-height: 20px;
-  text-transform: uppercase;
-  font-weight: 700;
+    color: #323131;
+    font-size: 20px;
+    padding-top: 10px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .cho_text span {
-  color: #352015;
-  font-size: 30px;
-  line-height: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 20px;
-  display: block;
+    color: #352015;
+    font-size: 30px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 20px;
+    display: block;
 }
 
 .bar_buy {
@@ -1044,10 +1045,8 @@ ul.email li i {
 
 .footer {
     padding-top: 100px;
-    background:linear-gradient(
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)
-      ),url(../../../images/icon/—Pngtree—japanese\ ramen\ simple\ black\ banner_1000082.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)), url(../../../images/icon/—Pngtree—japanese\ ramen\ simple\ black\ banner_1000082.jpg);
     background-size: 100% 100%;
     background-position: center;
     text-align: center;
@@ -1058,7 +1057,7 @@ ul.email li i {
     float: left;
 }
 
-.logo img{
+.logo img {
     width: 250px;
     height: 150px;
 }
@@ -1196,13 +1195,13 @@ ul.conta li a:hover {
 }
 
 .copyright p {
-  font-family: 'Poppins', sans-serif;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 22px;
-  text-align: center;
-  padding: 25px 0;
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    padding: 25px 0;
+    font-weight: 300;
 }
 
 .copyright a {
@@ -1317,20 +1316,20 @@ ul.conta li a:hover {
 }
 
 .main_form .send_btn {
-  font-size: 18px;
-  transition: ease-in all 0.5s;
-  background-color: #d27130;
-  text-transform: uppercase;
-  color: #fff;
-  max-width: 180px;
-  width: 100%;
-  display: block;
-  margin-top: 10px !important;
-  font-weight: bold;
-  height: 60px;
-  border-radius: 80px;
-  line-height: 60px;
-  margin: 0 auto;
+    font-size: 18px;
+    transition: ease-in all 0.5s;
+    background-color: #d27130;
+    text-transform: uppercase;
+    color: #fff;
+    max-width: 180px;
+    width: 100%;
+    display: block;
+    margin-top: 10px !important;
+    font-weight: bold;
+    height: 60px;
+    border-radius: 80px;
+    line-height: 60px;
+    margin: 0 auto;
 }
 
 .main_form .send_btn:hover {
@@ -1356,13 +1355,13 @@ ul.conta li a:hover {
     position: relative;
     display: inline-block;
     border-radius: 20px;
-  }
+}
 
-  .notificationcart:hover {
+.notificationcart:hover {
     background: lightblue;
-  }
+}
 
-  .notificationcart .badge {
+.notificationcart .badge {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -1370,20 +1369,20 @@ ul.conta li a:hover {
     border-radius: 50%;
     background: red;
     color: white;
-  }
+}
 
 
 
-  .contentmenu{
+.contentmenu {
     width: inherit;
     margin: auto;
     padding-left: 25px;
-    padding-right: 25px  ;
+    padding-right: 25px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.contentmenu .col-sm-3{
+.contentmenu .col-sm-3 {
     display: block;
     flex-basis: 25%;
     min-width: 100px;
@@ -1392,7 +1391,7 @@ ul.conta li a:hover {
     text-align: center;
 }
 
-.contentmenu .col-sm-3 img{
+.contentmenu .col-sm-3 img {
     width: 230px;
     height: 230px;
     display: block;
@@ -1403,8 +1402,8 @@ ul.conta li a:hover {
 
 
 .contentmenu .price span {
-   font-size: 16px;
-   color: white;
+    font-size: 16px;
+    color: white;
 }
 
 .contentmenu .party {
@@ -1432,56 +1431,67 @@ ul.conta li a:hover {
 }
 
 .contentmenu .party h5 {
-  color: #fff;
-  min-width: 100%;
-  min-height: 100%;
-  line-height: 32px;
-  font-weight: 600;
-  text-transform: uppercase;
-  background: #382014;
-  display: ruby-base;
-  padding: 15px 65px;
-  margin: 15px auto 0;
-  font-size: 25px;
+    color: #fff;
+    min-width: 100%;
+    min-height: 100%;
+    line-height: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #382014;
+    display: ruby-base;
+    padding: 15px 65px;
+    margin: 15px auto 0;
+    font-size: 25px;
 }
 
 
 /* modal image */
 
- /* Style the Image Used to Trigger the Modal */
- #myImg {
+/* Style the Image Used to Trigger the Modal */
+#myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-  }
+}
 
-  #myImg:hover {opacity: 0.7;}
+#myImg:hover {
+    opacity: 0.7;
+}
 
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
 
-  /* Modal Content (Image) */
-  .modal-content {
+/* Modal Content (Image) */
+.modal-content {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
-  }
+}
 
-  /* Caption of Modal Image (Image Text) - Same Width as the Image */
-  #caption {
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
     margin: auto;
     display: block;
     width: 80%;
@@ -1490,21 +1500,27 @@ ul.conta li a:hover {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
-  }
+}
 
-  /* Add Animation - Zoom in the Modal */
-  .modal-content, #caption {
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
     animation-name: zoom;
     animation-duration: 0.6s;
-  }
+}
 
-  @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-  }
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
 
-  /* The Close Button */
-  .close {
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -1512,51 +1528,51 @@ ul.conta li a:hover {
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
     .modal-content {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
 
-  .aboutus{
-      flex-grow: 1;
-      overflow: hidden;
-  }
+.aboutus {
+    flex-grow: 1;
+    overflow: hidden;
+}
 
-  /* untuk video */
-  .videoabout {
-      width: inherit;
-      height: inherit;
-      position: relative;
-      display: flex;
-      justify-content: center;
-  }
+/* untuk video */
+.videoabout {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
 
-  .videoabout video{
-      flex-grow: 1;
-      object-fit: cover;
-  }
+.videoabout video {
+    flex-grow: 1;
+    object-fit: cover;
+}
 
 
-  /*  untuk abous us menu diatas*/
+/*  untuk abous us menu diatas*/
 
-  .tm-paging-links {
+.tm-paging-links {
     text-align: center;
     margin-bottom: 40px;
-  }
+}
 
-  .tm-paging-item {
+.tm-paging-item {
     list-style: none;
     display: inline-block;
     border: 1px solid #2F956D;
@@ -1564,9 +1580,9 @@ ul.conta li a:hover {
     margin-top: 20px;
     min-width: 100px;
     min-height: 50px;
-  }
+}
 
-  .tm-paging-link {
+.tm-paging-link {
     padding: 13px 30px;
     display: flex;
     align-items: center;
@@ -1574,45 +1590,130 @@ ul.conta li a:hover {
     text-decoration: none;
     color: #2F956D;
     background-color: transparent;
-  }
+}
 
-  .tm-paging-link.active,
-  .tm-paging-link:hover {
+.tm-paging-link.active,
+.tm-paging-link:hover {
     background-color: #2F956D;
     color: white;
-  }
+}
 
 
 
-  .menuitemabout{
-      position: absolute;
-  }
+.menuitemabout {
+    position: absolute;
+}
 
-  .textvideo{
+.textvideo {
     margin-left: -350px;
     margin-top: 200px;
-  }
+}
 
-.textvideo-judul{
+.textvideo-judul {
     padding: 0%;
 
 
     margin-bottom: 50px;
 }
-.textvideo-judul h1{
+
+.textvideo-judul h1 {
     color: white;
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.textvideo-isi{
+.textvideo-isi {
     position: absolute;
     padding: 0%;
     width: 500px;
 }
 
 .textvideo-isi p {
-   color: white;
-   word-wrap: break-word;
+    color: white;
+    word-wrap: break-word;
+}
+
+
+
+.detailmenu {
+    width: inherit;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+}
+
+.detailmenu img {
+    min-height: 400px;
+    max-height: 400px;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+.detailitem {
+    max-width: 600px;
+    padding: 25px;
+}
+
+
+/*  style tombol cart */
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 2px;
+    background-color: #212121;
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    font-family: sans-serif;
+    max-width: 5rem;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 2rem;
+    height: 3rem;
+    font-weight: bold;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.number-input input::-webkit-outer-spin-button,
+.number-input input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
 }

@@ -50,28 +50,37 @@
         @include('home.sidebar')
         <div id="content">
 
-            <div class="contentmenu">
-                @foreach ($listmenu as $item)
-                    <div class="col-sm-3">
-                        <div class="orders_box text_align_left">
-                            <div class="orders_img">
-                                <figure><img src="{{ URL::to('/') }}/images/ramen/{{ $item->foto_menu }}" alt="#" />
-                                </figure>
-                                <div class="price">
-                                    <span>Harga<br>@TampilanRp($item->harga_menu)</span>
-                                </div>
-                            </div>
-                            <div class="party">
-                                <h5>{{ $item->nama_menu }}</h5>
-                            </div>
-                            <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{ $item->nama_menu }}">Pesan</a>
+            <div class="detailmenu">
+                <div>
+                    <img src="{{ URL::to('/') }}/images/ramen/{{ $menu->foto_menu }}" alt="">
+                </div>
+                <div class="detailitem">
+                    <h1>{{ $menu->nama_menu }}</h1>
+                    <br>
+                    <p>{{ $menu->deskripsi_menu }}</p>
+                    <br>
+                    <h1>@TampilanRp($menu->harga_menu)</h1>
+                    <br>
+                    <form action="{{ URL($_SERVER['REQUEST_URI']) }}/addpesanan" method="POST">
+                        @csrf
+                        <div class="number-input" style="float: left">
+                            <button
+                                onclick="this.parentNode.querySelector('input[type=number]').stepDown(); return false;"
+                                class="minus"></button>
+                            <input class="quantity" min="1" name="quantity" value="1" type="number">
+                            <button
+                                onclick="this.parentNode.querySelector('input[type=number]').stepUp(); return false;"
+                                class="plus"></button>
                         </div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="d-flex">
-                <h2 style="display: block; margin-left: auto;margin-right: auto" class="">
-                    {{ $listmenu->links('pagination::bootstrap-4') }}</h2>
+                        <div style="float: left ; padding-left: 10%;">
+                            {{-- <input type="hidden" name="game_id" value={{$game->game_id}} > --}}
+                            <button type="submit" class="btn btn-lg btn-primary col-lg-12  rounded-pill  ">Add to
+                                Cart</button>
+                        </div>
+                    </form>
+                </div>
+
+
             </div>
         </div>
     </div>
