@@ -34,7 +34,7 @@
                                                 <div class="party">
                                                     <h5>{{ $listmenu[0]->nama_menu }}</h5>
                                                 </div>
-                                                <a class="read_more" href="Javascript:void(0)">Pesan</a>
+                                                <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{$listmenu[0]->nama_menu}}">Pesan</a>
                                             </div>
                                         </div>
                                         @for ($i = 1; $i <= 3; $i++)
@@ -51,7 +51,7 @@
                                                     <div class="party">
                                                         <h5>{{ $listmenu[$i]->nama_menu }}</h5>
                                                     </div>
-                                                    <a class="read_more" href="Javascript:void(0)">Pesan</a>
+                                                    <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{$listmenu[$i]->nama_menu}}">Pesan</a>
                                                 </div>
                                             </div>
                                         @endfor
@@ -77,7 +77,7 @@
                                                 <div class="party">
                                                     <h5>{{ $listmenu[4]->nama_menu }}</h5>
                                                 </div>
-                                                <a class="read_more" href="Javascript:void(0)">Pesan</a>
+                                                <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{$listmenu[4]->nama_menu}}">Pesan</a>
                                             </div>
                                         </div>
                                         @for ($i = 5; $i <= 7; $i++)
@@ -94,7 +94,7 @@
                                                     <div class="party">
                                                         <h5>{{ $listmenu[$i]->nama_menu }}</h5>
                                                     </div>
-                                                    <a class="read_more" href="Javascript:void(0)">Pesan</a>
+                                                    <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{$listmenu[$i]->nama_menu}}">Pesan</a>
                                                 </div>
                                             </div>
                                         @endfor
@@ -120,7 +120,7 @@
                                                 <div class="party">
                                                     <h5>{{ $listmenu[4]->nama_menu }}</h5>
                                                 </div>
-                                                <a class="read_more" href="Javascript:void(0)">Pesan</a>
+                                                <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{$listmenu[4]->nama_menu}}">Pesan</a>
                                             </div>
                                         </div>
                                         @for ($i = 9; $i <= 11; $i++)
@@ -137,7 +137,7 @@
                                                     <div class="party">
                                                         <h5>{{ $listmenu[$i]->nama_menu }}</h5>
                                                     </div>
-                                                    <a class="read_more" href="Javascript:void(0)">Pesan</a>
+                                                    <a class="read_more" href="{{ URL::to('/') }}/selenium/menu/{{$listmenu[$i]->nama_menu}}">Pesan</a>
                                                 </div>
                                             </div>
                                         @endfor
