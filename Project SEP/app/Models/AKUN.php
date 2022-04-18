@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class AKUN extends Model
+class AKUN extends Authenticatable
 {
     use HasFactory;
 
@@ -21,4 +22,9 @@ class AKUN extends Model
         'akun_role',
         'status',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->akun_password;
+    }
 }

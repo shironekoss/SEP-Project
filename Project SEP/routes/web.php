@@ -25,6 +25,7 @@ Route::prefix('selenium')->group(function (){
     Route::get('menu', [Home::class, "menu"]);
     Route::get('customorder', [Home::class, "customorder"]);
 
+    Route::get('login', [logonController::class, "login"]);
     Route::post('cekLogin', [logonController::class, 'cekLogin']);
     // Route::post('/dologin', [LoginRegisterController::class,'dologin']);
 });
