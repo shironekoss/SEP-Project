@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class logonController extends Controller
 {
@@ -15,6 +16,26 @@ class logonController extends Controller
             'password' => 'required'
         ]);
 
-        return redirect('selenium/login')->with('error', 'Email and Password tidak terdaftar');
+        $credential = [
+            //yg orange yg database , yang biru yg dari form
+            "akun_user"  => $request->username,
+            "password"  => $request->password
+        ];
+        dump($credential);
+
+        $cekcustomer = Auth::attempt($credential);
+        dd($cekcustomer);
+        if($cekcustomer){
+            return redirect('selenium/menu');
+        }
+        else{
+            return redirect('selenium/login')->with('pesan', 'Akun User atau Password salah!');
+        }
+
+    }
+
+    public function login(Request $request)
+    {
+        return view('login');
     }
 }

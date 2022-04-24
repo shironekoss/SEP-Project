@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ asset('CssLogin/styleLogin.css') }}">
 </head>
 <body>
+    @if (Session::has('pesan'))
+        <div class="alert alert-danger">{{ Session::get('pesan') }}</div>
+    @endif
     <div class="login">
         <div class="heading">
             <h2>Sign in</h2>

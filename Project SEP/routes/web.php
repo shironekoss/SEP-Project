@@ -28,6 +28,7 @@ Route::prefix('selenium')->group(function (){
     Route::get('menu/{nama_menu}',[Home::class, "menudetail"]);
     Route::post('menu/{nama_menu}/addpesanan',[Home::class, "addpesanan"]);
 
+    Route::get('login', [logonController::class, "login"]);
     Route::post('cekLogin', [logonController::class, 'cekLogin']);
 
     //static pesanan
