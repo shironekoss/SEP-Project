@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home;
 use App\Http\Controllers\logonController;
+use App\Http\Controllers\PesananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,15 @@ Route::prefix('selenium')->group(function (){
     Route::post('menu/{nama_menu}/addpesanan',[Home::class, "addpesanan"]);
 
     Route::post('cekLogin', [logonController::class, 'cekLogin']);
+
+    //static pesanan
+    Route::get('pesanan', [PesananController::class, "listorder"]);
+    //untuk dynamic cart
+    Route::post('update', [PesananController::class,"update"]);
+    Route::post('total', [PesananController::class,"total"]);
+    Route::post('changecheckbox', [PesananController::class,"changecheckbox"]);
+    Route::get('hapuscart/{cart_id}', [PesananController::class,"hapuscart"]);
+    Route::get('cek', [PesananController::class,"simpan"]);
 
     // Route::post('/dologin', [LoginRegisterController::class,'dologin']);
 });

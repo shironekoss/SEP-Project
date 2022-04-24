@@ -1639,8 +1639,9 @@ ul.conta li a:hover {
 .detailmenu {
     width: inherit;
     margin: auto;
-    padding-left: 25px;
+    padding-left: 100px;
     padding-right: 25px;
+    padding-top: 4%;
     display: flex;
     flex-wrap: wrap;
     float: left;
@@ -1654,8 +1655,9 @@ ul.conta li a:hover {
 }
 
 .detailitem {
-    max-width: 600px;
+    max-width: 750px;
     padding: 25px;
+    padding-left: 150px;
 }
 
 
@@ -1716,4 +1718,77 @@ ul.conta li a:hover {
 .number-input input::-webkit-inner-spin-button{
     -webkit-appearance: none;
     margin: 0;
+}
+
+
+/* untuk pesanan cart customer */
+.Header-cart{
+    font-size: 30px;
+    position: relative;
+}
+
+.container-cart{
+    width: 100%;
+    height: 1250px;
+}
+
+.container-cart-items{
+    padding-left: 5%;
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+.container-cart-items div img{
+    width: 150px;
+    height: 150px;
+    display: block;
+    position: absolute;
+    top: 25px; left: 4%; bottom: 0; right: 0;
+}
+
+
+.container-cart-items-desc{
+    display: block;
+    position: absolute;
+    left: 15%;
+    top: 5%;
+    right: 60%;
+    height: 100%;
+}
+
+.container-cart-items-control{
+    position: absolute;
+    top: -5%;
+    left: 43%;
+    height: 100%;
+}
+
+.container-cart-items-control h5{
+    font-size: 18px;
+    font-weight: lighter;
+    color: rgb(49, 46, 46);
+     margin-top: 20%
+}
+
+.container-cart-items-control h6{
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+
+.container-cart-items-subtotal{
+    position: absolute;
+    left: 56%;
+    height: 100%;
+    width: 25%;
+    margin-top: -5%;
+}
+
+.form-check{
+    margin-left: -3%;
+}
+
+.checkout{
+    padding: 0px;
+    padding-right: 15%;
 }

@@ -44,22 +44,23 @@
     </div>
     <!-- end loader -->
     <!-- header -->
+
     @include('home.Header')
     <div class="wrapper">
         <!-- Sidebar -->
         @include('home.sidebar')
         <div id="content">
-
+            @include('sweetalert::alert')
             <div class="detailmenu">
                 <div>
                     <img src="{{ URL::to('/') }}/images/ramen/{{ $menu->foto_menu }}" alt="">
                 </div>
                 <div class="detailitem">
-                    <h1>{{ $menu->nama_menu }}</h1>
+                    <h1 style="font-size: 36px;font-weight: bold">{{ $menu->nama_menu }}</h1>
                     <br>
                     <p>{{ $menu->deskripsi_menu }}</p>
                     <br>
-                    <h1>@TampilanRp($menu->harga_menu)</h1>
+                    <h1 style="font-size: 26px; font-weight: bold">Harga : @TampilanRp($menu->harga_menu)</h1>
                     <br>
                     <form action="{{ URL($_SERVER['REQUEST_URI']) }}/addpesanan" method="POST">
                         @csrf
@@ -98,6 +99,7 @@
         <!-- Modal Caption (Image Text) -->
         <div id="caption"></div>
     </div>
+
 
     <div>
         {{-- untuk home --}}

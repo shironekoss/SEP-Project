@@ -21,4 +21,7 @@ class PESANANCART extends Model
         'verifikasi',
     ];
 
+    public function menu_relation(){
+        return $this -> hasOne(MENU::class, 'menu_id','menu_id');
+    }
 }

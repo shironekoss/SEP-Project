@@ -7,6 +7,7 @@ use App\Models\PESANANCART;
 use Database\Seeders\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Home extends Controller
 {
@@ -56,7 +57,7 @@ class Home extends Controller
                     $tempqty=$datakembar->quantity+$quantity;
                     $datakembar->quantity=$tempqty;
                     $datakembar->save();
-                    // Alert::success('Sukses tambah ke Keranjang', $quantity.' unit '.$menu->menu->nama_menu);
+                    Alert::success('Sukses menbambahkan ke list pesanan', $quantity.' mangkuk '.$menu->nama_menu);
                     return redirect()->back();
                 }
                 else{
@@ -67,7 +68,7 @@ class Home extends Controller
                     'akun_id'=>1,
                     'verifikasi'=>false
                 ]);
-                // Alert::success('Sukses tambah ke Keranjang', $quantity.' unit '.$menu->menu->nama_menu);
+                Alert::success('Sukses menbambahkan ke list pesanan', $quantity.' mangkuk '.$menu->nama_menu);
                 return redirect()->back();
                 }
             }
