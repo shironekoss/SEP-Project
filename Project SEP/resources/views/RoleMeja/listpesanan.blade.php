@@ -5,6 +5,7 @@
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -15,6 +16,7 @@
     <meta name="author" content="">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{{ asset('desain/css/Gchoco/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('desain/checkout/checkout.css') }}">
     <!-- style css -->
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
     {{-- <link type="text/css" rel="stylesheet" href="{{ Ass('css/app.css') }}"> --}}
@@ -65,7 +67,7 @@
                         <div class="container-cart-items">
                             <div>
                                 <div class="form-check">
-                                    @if ($item->cart_checked)
+                                    {{-- @if ($item->cart_checked)
                                         <input class="form-check-input" type="checkbox"
                                             style="zoom: 1.5;margin-left: -15px" value="{{ $item->cart_id }}"
                                             id="flexCheckDefault{{ $item->cart_id }}" checked=true
@@ -75,67 +77,69 @@
                                         <input class="form-check-input" type="checkbox" value="{{ $item->cart_id }}"
                                             id="flexCheckDefault{{ $item->cart_id }}"
                                             onclick="changecheck(flexCheckDefault{{ $item->cart_id }})">
-                                    @endif
-
-                                    <label class="form-check-label" for="flexCheckDefault{{ $item->cart_id }}"
+                                    @endif --}}
+                                    {{-- <label class="form-check-label" for="flexCheckDefault{{ $item->cart_id }}"
                                         style="color: darkblue;font-size: 20px;">
                                         Pilih Item
-                                    </label>
+                                    </label> --}}
                                 </div>
                                 <img style="padding-top:5px "
                                     src="{{ URL::to('/') }}/images/ramen/{{ $item->menu_relation->foto_menu }}"
                                     alt="">
                             </div>
                             <div class="container-cart-items-desc">
-                                <h4 style="font-weight: bold;font-size: 20px">{{ $item->menu_relation->nama_menu }}</h4>
+                                <h4 style="font-weight: bold;font-size: 20px">{{ $item->menu_relation->nama_menu }}
+                                </h4>
                                 <br>
-                                <p style="font-size: 13px">{{ $item->menu_relation->deskripsi_menu  }}</p>
+                                <p style="font-size: 13px">{{ $item->menu_relation->deskripsi_menu }}</p>
                             </div>
                             <div class="container-cart-items-control">
-                                <input id="ambilharga{{ $item->cart_id }}" class="ambilharga" type="hidden"
-                                    value="{{ $item->menu_relation->harga_menu }}">
-                                <h5 >
+                                <input id="ambilharga{{ $item->pesanancart_id }}" class="ambilharga"
+                                    type="hidden" value="{{ $item->menu_relation->harga_menu }}">
+                                <h5>
                                     Harga:@TampilanRp($item->menu_relation->harga_menu )</h5>
                                 <h6 style="margin-bottom: -2%;font-weight: bold">Quantity</h6>
                                 <div class="number-input">
                                     <button type="button"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown(); update(buttonminus{{ $item->cart_id }}); Grandtotal()"
-                                        class="btn minus btn-danger" id="buttonminus{{ $item->cart_id }}"
-                                        style="width: 30px; height: 20px" value="{{ $item->cart_id }}"></button>
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown(); update(buttonminus{{ $item->pesanancart_id }}); Grandtotal()"
+                                        class="btn minus btn-danger" id="buttonminus{{ $item->pesanancart_id }}"
+                                        style="width: 30px; height: 20px"
+                                        value="{{ $item->pesanancart_id }}"></button>
                                     {{-- <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); Grandtotal()" class="btn minus btn-danger"   id="buttonminus{{$item->cart_id}}" style="width: 30px; height: 20px" value="{{$item->cart_id}}"></button> --}}
                                     <input class="quantity" min="1" name="quantity"
-                                        id="qty{{ $item->cart_id }}" value={{ $item->cart_quantity }}
+                                        id="qty{{ $item->pesanancart_id }}" value={{ $item->quantity }}
                                         type="number" style="width: 40px; height: 20px; font-size:15px; " disabled>
                                     <button type="button"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp();update(buttontambah{{ $item->cart_id }});Grandtotal()"
-                                        class="btn plus btn-success" id="buttontambah{{ $item->cart_id }}"
-                                        value="{{ $item->cart_id }}" style="width: 30px; height: 20px"></button>
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp();update(buttontambah{{ $item->pesanancart_id }});Grandtotal()"
+                                        class="btn plus btn-success" id="buttontambah{{ $item->pesanancart_id }}"
+                                        value="{{ $item->pesanancart_id }}"
+                                        style="width: 30px; height: 20px"></button>
                                 </div>
                                 <div style="padding-top: 10px">
-                                    <a href="{{ url('LudensGameStore/hapuscart') }}/{{ $item->cart_id }}">
+                                    <a href="{{ url('selenium/hapuspesanan') }}/{{ $item->pesanancart_id }}">
                                         <button class="btn-danger" style="font-size: 15px; margin-top: 30%"><i
-                                                class="fas fa-trash"></i> Hapus dari cart</button>
+                                                class="fas fa-trash"></i> Hapus Pesanan</button>
                                     </a>
                                 </div>
                             </div>
                             <div style="text-align: center" class="container-cart-items-subtotal">
-                                <h5 id="subtotal{{ $item->cart_id }}" class="subtotal"
+                                <h5 id="subtotal{{ $item->pesanancart_id }}" class="subtotal"
                                     style="color: rgb(49, 46, 46); font-weight: bold;font-size:30px;margin-top: 25%">
-                                    @TampilanRp($item->menu_relation->harga_menu  * $item->quantity )</h5>
+                                    @TampilanRp($item->menu_relation->harga_menu * $item->quantity )</h5>
                             </div>
                         </div>
                         <hr style="color:#333;background-color:rgb(53, 50, 50)">
                     @endforeach
                     <div class="checkout" style=" float: right;">
-                        <form action="{{ URL('LudensGameStore/cek') }}" method="GET">
-                            <button class="btn-success" style="font-size: 25px;margin-top: 20px;margin-right: 30px"
-                                type="submit">
-                                <i class="fas fa-cash-register"></i> Checkout</button>
-                            <label id="grandtotal"
-                                style="font-weight: lighter;color: rgb(49, 46, 46); font-weight: bold;font-size:2rem; width:395px "
-                                class="sketchy"> @TampilanRp($grandtotal)</label>
+                        {{-- <form action="{{ URL('LudensGameStore/cek') }}" method="GET"> --}}
+                        <button class="btn-success" style="font-size: 25px;margin-top: 20px;margin-right: 30px"
+                            type="submit" data-toggle="modal" data-target="#MetodePembayaran">
+                            <i class="fas fa-cash-register"></i> Checkout</button>
+                        <label id="grandtotal"
+                            style="font-weight: lighter;color: rgb(49, 46, 46); font-weight: bold;font-size:2rem; width:395px; padding-left: 5% "
+                            class="sketchy"> @TampilanRp($grandtotal)</label>
                     </div>
-                    </form>
+                    {{-- </form> --}}
                 </div>
             @endif
         </div>
@@ -154,36 +158,86 @@
         <!-- Modal Caption (Image Text) -->
         <div id="caption"></div>
     </div>
+    {{-- untuk home --}}
+    @include('home.footer')
+
+    <!-- end footer -->
+    {{-- modal --}}
+    <div class="modal fade" id="MetodePembayaran" tabindex="-1" role="dialog" aria-labelledby="MetodePembayaran"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="display: block; text-align: center">
+                <h3>Pilih Pembayaran</h3>
+                <div class="modal-body">
+                    {{-- <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight: bold; float: left;">Saldo Anda : @TampilanRp(Auth::user()->users_saldo)
+                </h5> --}}
+
+                    @csrf
+                    <h5 style="clear: both;font-weight: bold;">Ringkasan Pembayaran</h5>
+                    <div style="float: left;text-align: left">
+                        <h6>Total Tagihan :<label style="padding-left: 200px" id="subTotalTagihan"
+                                name="subTotalTagihan"></label></h6>
+                        <h6>Saldo Terpakai :<label style="padding-left: 190px" id="subPakaiSaldo"></label></h6>
+                        <input type="hidden" id="kurangbayar" name="kurangbayar" value="" form="pembayaranKB">
+                        <h6>Total Bayar :<label style="padding-left: 215px" id="subTotalBayar"
+                                form="pembayaranKB"></label></h6>
+                        <input type="hidden" value="" id="hiddentotalbayar">
+                    </div>
+                    <form id="pembayaranKB" action="pembayaran" method="post">
+                        @csrf
+                        <Button value="Ovo" class="buttonbayar" name="pemb" id="buttonovo">
+                            <img src="{{ asset('images/WalletIcon/ovo.png') }}" alt="" class="pay1">
+                            <label for="">OVO Virtual Wallet</label>
+                        </Button>
+                        <Button value="Dana" class="buttonbayar" name="pemb" id="buttondana">
+                            <img src="{{ asset('images/WalletIcon/dana.png') }}" alt="" class="pay1">
+                            <label for="">Dana Virtual Wallet</label>
+                        </Button>
+                        <Button value="Gopay" class="buttonbayar" name="pemb" id="buttongopay">
+                            <img src="{{ asset('images/WalletIcon/gopay.png') }}" alt="" class="pay1">
+                            <label for="">GoPay Virtual Wallet</label>
+                        </Button>
+                        <Button value="Shoppepay" class="buttonbayar" name="pemb" id="buttonshoppe">
+                            <img src="{{ asset('images/WalletIcon/sope.png') }}" alt="" class="pay1">
+                            <label for="">Shoppe Pay Virtual Wallet</label>
+                        </Button>
+                        <Button value="BCA Transfer" class="buttonbayar" name="pemb" id="buttonBCA">
+                            <img src="{{ asset('images/WalletIcon/bca.png') }}" alt="" class="pay1">
+                            <label for="">Transfer BCA</label>
+                        </Button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="subcheckout">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript files-->
+    <script src="{{ asset('desain/js/gchoco/jquery.min.js') }}"></script>
+    <script src="{{ asset('desain/js/gchoco/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('desain/js/gchoco/jquery-3.0.0.min.js') }}"></script>
+    <script src="{{ asset('desain/js/Seleniumcustom/modalimg.js') }}"></script>
 
 
-    <div>
-        {{-- untuk home --}}
-        @include('home.footer')
+    <!-- sidebar -->
+    {{-- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script src="{{ asset('desain/js/gchoco/custom.js') }}"></script>
+    <script type="text/javascript">
+        baguetteBox.run('.tz-gallery');
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-        <!-- end footer -->
-        <!-- Javascript files-->
-        <script src="{{ asset('desain/js/gchoco/jquery.min.js') }}"></script>
-        <script src="{{ asset('desain/js/gchoco/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('desain/js/gchoco/jquery-3.0.0.min.js') }}"></script>
-        <script src="{{ asset('desain/js/Seleniumcustom/modalimg.js') }}"></script>
-
-
-        <!-- sidebar -->
-        {{-- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script> --}}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-        <script src="{{ asset('desain/js/gchoco/custom.js') }}"></script>
-        <script type="text/javascript">
-            baguetteBox.run('.tz-gallery');
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-
-                $('#sidebarCollapse').on('click', function() {
-                    $('#sidebar').toggleClass('active');
-                });
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').toggleClass('active');
             });
-        </script>
-        <script type="text/javascript" src="{{ asset('JS/cart.js') }}" defer rel="stylesheet"></script>
+        });
+    </script>
+    <script type="text/javascript" src="{{ asset('JS/cart.js') }}" defer rel="stylesheet"></script>
 </body>
 
 

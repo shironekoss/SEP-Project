@@ -1,7 +1,9 @@
+
 function update (kurangid){
 
     let val = $(kurangid).val();
     let qty = $('#qty'+val).val();
+    // console.log(val,qty)
     $.ajax({
         url: 'update',
         method: 'POST',
@@ -12,9 +14,11 @@ function update (kurangid){
             _token: $('meta[name="csrf-token"]').attr('content')
           },
           success:function(data){
-            // alert(data);
+
             let price = $('#ambilharga'+val).val();
+
             $('#subtotal'+val).html("Rp. "+formatRupiah(price*qty));
+            
         },error:function(){
             console.log('Ada Error di update');
         }
@@ -37,6 +41,7 @@ function Grandtotal(){
         url: 'total',
         method: 'POST',
         dataType: 'JSON',
+        header:{'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         data: {
             _token: $('meta[name="csrf-token"]').attr('content')
           },

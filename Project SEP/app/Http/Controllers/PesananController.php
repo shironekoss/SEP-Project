@@ -6,6 +6,7 @@ use App\Models\PESANANCART;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use RealRashid\SweetAlert\Facades\Alert;
+use SebastianBergmann\Environment\Console;
 
 class PesananController extends Controller
 {
@@ -15,10 +16,11 @@ class PesananController extends Controller
         // $isikeranjang = Cart::where('users_id',Auth::user()->users_id)->get();
         $listorder = PESANANCART::where('akun_id',1)->get();
         foreach ($listorder as $item) {
-            if($item->verifikasi==true){
+            // if($item->verifikasi==true){
                 $grandtotal=$grandtotal+($item->menu_relation->harga_menu * $item->quantity);
-            }
+            // }
         }
+
         return view('RoleMeja.listpesanan',[
                     "cart"=>$listorder,
                     "grandtotal"=>$grandtotal
@@ -29,11 +31,13 @@ class PesananController extends Controller
     {
        $cart_id = $request->cart_id;
        $quantity =$request->quantity;
-      $cartmaudiupdate = PESANANCART::where('cart_id',$cart_id)->first();
-      $cartmaudiupdate->cart_quantity=$quantity;
+      $cartmaudiupdate = PESANANCART::where('pesanancart_id',$cart_id)->first();
+      $cartmaudiupdate->quantity=$quantity;
         if($cartmaudiupdate->save()){
             return response()->json([
-                'sukses'
+                "sukses",
+                "cart_id"=>$cart_id,
+                $quantity
                ]);
         }
     }
@@ -44,11 +48,11 @@ class PesananController extends Controller
         // $isikeranjang = PESANANCART::where('users_id',Auth::user()->users_id)
         //                                 ->where('cart_checked',1)
         //                                 ->get();
-        $isikeranjang = PESANANCART::where('akun_id',1)->get();
+        $isikeranjang = PESANANCART::all();
         $grandtotal=0;
         foreach ($isikeranjang as $item) {
-            $qty = $item->cart_quantity;
-            $harga = $item->game_relation->game_sell_price;
+            $qty = $item->quantity;
+            $harga = $item->menu_relation->harga_menu;
             $grandtotal=$grandtotal+($qty*$harga);
         }
         return response()->json([
@@ -79,8 +83,8 @@ class PesananController extends Controller
     }
 
     protected function hapuscart (Request $request){
-        PESANANCART::where('cart_id',$request->cart_id)->delete();
-        return redirect(URL::to('/selenium/listorder'));
+        PESANANCART::where('pesanancart_id',$request->pesanancart_id)->delete();
+        return redirect(URL::to('/selenium/pesanan'));
     }
 
     public function simpan(Request $request){

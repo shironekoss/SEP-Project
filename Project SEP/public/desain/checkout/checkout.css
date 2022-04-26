@@ -1,0 +1,134 @@
+.gradient-border {
+    margin: auto;
+    border: 1px solid #333333;
+    font-size: 22px;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+}
+.gradient-border::after{
+    top: 100px;
+    left: 50px;
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+}
+
+@keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+}
+.headercheckout{
+    width: 100%;
+    position: relative;
+}
+
+.headercheckout input{
+    position: absolute;
+    width: 30%;
+    left: 10%;
+}
+
+.checkout-items{
+    margin-top: 15px;
+    min-height: 150px;
+    max-height: 300px;
+    position: relative;
+    width: 70%;
+    float: left;
+}
+
+.checkout-kiri{
+    width: 140px;
+    height: inherit;
+    margin: 0px 10px;
+    float: left;
+}
+.checkout-kiri img{
+    max-width: 140px;
+    max-height: 150px;
+    height: inherit;
+
+}
+.checkout-tengah{
+    width: 70%;
+    min-height: 150px;
+    max-height: 290px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.checkout-tengah h4{
+    padding-top: 0px;
+    font-size: 20px;
+    overflow: hidden;
+  text-overflow: ellipsis;
+}
+.checkout-final{
+    width: 18%;
+    height: 230px;
+    position: fixed;
+    float: left;
+    margin-top: -10px;
+    left: 62%;
+    border-style: ridge;
+    border-color: rgba(173, 173, 255, 0.26);
+    border-width: 7px;
+    border-radius: 30px;
+}
+
+.checkout-final div{
+    margin-top: 20px;
+}
+#Pembayaran{
+    width: 80%;
+    padding-right: 10px;
+    padding-left:10px;
+    text-align: center;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    left: 10%;
+}
+
+.modal-body button{
+    border:none;
+    border-top: 1px gray solid;
+    border-bottom: 1px gray solid;
+    align-items: left;
+    text-align: left;
+    width: 100%;
+    height: 80px;
+}
+.modal-body img{
+    width: 100px;
+    height: 50px;
+}
+.modal-body button label{
+    font-size: 22px;
+    padding-left:30px;
+}
+
+.modal-backdrop {
+    z-index: 0;
+  }
+
