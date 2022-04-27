@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('akun_id');
             $table->string('akun_user',12)->unique();
             $table->string('akun_nama',20);
-            $table->string('akun_password',10);
+            $table->string('akun_password');
             $table->string('akun_role',20);
             $table->string('status',20);
         });

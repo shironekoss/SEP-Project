@@ -39,6 +39,7 @@ Route::prefix('selenium')->group(function (){
     Route::post('changecheckbox', [PesananController::class,"changecheckbox"]);
     Route::get('hapuspesanan/{pesanancart_id}', [PesananController::class,"hapuscart"]);
     Route::get('cek', [PesananController::class,"simpan"]);
+    Route::post('pembayaran', [PesananController::class,"pembayaran"]);
 
     // Route::post('/dologin', [LoginRegisterController::class,'dologin']);
 });

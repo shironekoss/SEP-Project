@@ -99,4 +99,23 @@ class PesananController extends Controller
         }
         return redirect(URL::to('/LudensGameStore/Checkout'));
     }
+
+    public function pembayaran(Request $request)
+    {
+        // $user=Auth::user()->users_id;
+        // $saldo= Auth::user()->users_saldo;
+        $items=PESANANCART::where('akun_id',1)
+        ->get();
+        $total = 0;
+        foreach ($items as $item) {
+            $qty = $item->quantity;
+            $harga = $item->menu_relation->harga_menu;
+            $total=$total+($qty*$harga);
+        }
+        return response()->json([
+           $invoice= array(
+                'totaltagihan'=>$total,
+            )
+        ]);
+    }
 }

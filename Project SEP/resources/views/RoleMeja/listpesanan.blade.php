@@ -67,21 +67,6 @@
                         <div class="container-cart-items">
                             <div>
                                 <div class="form-check">
-                                    {{-- @if ($item->cart_checked)
-                                        <input class="form-check-input" type="checkbox"
-                                            style="zoom: 1.5;margin-left: -15px" value="{{ $item->cart_id }}"
-                                            id="flexCheckDefault{{ $item->cart_id }}" checked=true
-                                            value="{{ $item->cart_id }}"
-                                            onclick="changecheck(flexCheckDefault{{ $item->cart_id }})">
-                                    @else
-                                        <input class="form-check-input" type="checkbox" value="{{ $item->cart_id }}"
-                                            id="flexCheckDefault{{ $item->cart_id }}"
-                                            onclick="changecheck(flexCheckDefault{{ $item->cart_id }})">
-                                    @endif --}}
-                                    {{-- <label class="form-check-label" for="flexCheckDefault{{ $item->cart_id }}"
-                                        style="color: darkblue;font-size: 20px;">
-                                        Pilih Item
-                                    </label> --}}
                                 </div>
                                 <img style="padding-top:5px "
                                     src="{{ URL::to('/') }}/images/ramen/{{ $item->menu_relation->foto_menu }}"
@@ -133,7 +118,7 @@
                     <div class="checkout" style=" float: right;">
                         {{-- <form action="{{ URL('LudensGameStore/cek') }}" method="GET"> --}}
                         <button class="btn-success" style="font-size: 25px;margin-top: 20px;margin-right: 30px"
-                            type="submit" data-toggle="modal" data-target="#MetodePembayaran">
+                            type="submit" data-toggle="modal" data-target="#MetodePembayaran" id="Pembayaran">
                             <i class="fas fa-cash-register"></i> Checkout</button>
                         <label id="grandtotal"
                             style="font-weight: lighter;color: rgb(49, 46, 46); font-weight: bold;font-size:2rem; width:395px; padding-left: 5% "
@@ -167,39 +152,33 @@
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" style="display: block; text-align: center">
-                <h3>Pilih Pembayaran</h3>
                 <div class="modal-body">
                     {{-- <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight: bold; float: left;">Saldo Anda : @TampilanRp(Auth::user()->users_saldo)
                 </h5> --}}
 
                     @csrf
                     <h5 style="clear: both;font-weight: bold;">Ringkasan Pembayaran</h5>
-                    <div style="float: left;text-align: left">
-                        <h6>Total Tagihan :<label style="padding-left: 200px" id="subTotalTagihan"
-                                name="subTotalTagihan"></label></h6>
-                        <h6>Saldo Terpakai :<label style="padding-left: 190px" id="subPakaiSaldo"></label></h6>
-                        <input type="hidden" id="kurangbayar" name="kurangbayar" value="" form="pembayaranKB">
-                        <h6>Total Bayar :<label style="padding-left: 215px" id="subTotalBayar"
-                                form="pembayaranKB"></label></h6>
-                        <input type="hidden" value="" id="hiddentotalbayar">
+                    <div id="header-modal">
+                        <h6>Total Tagihan  </h6>
+                        <label id="subTotalTagihan" name="subTotalTagihan"></label>
                     </div>
                     <form id="pembayaranKB" action="pembayaran" method="post">
                         @csrf
                         <Button value="Ovo" class="buttonbayar" name="pemb" id="buttonovo">
                             <img src="{{ asset('images/WalletIcon/ovo.png') }}" alt="" class="pay1">
-                            <label for="">OVO Virtual Wallet</label>
+                            <label for="">OVO Wallet</label>
                         </Button>
                         <Button value="Dana" class="buttonbayar" name="pemb" id="buttondana">
                             <img src="{{ asset('images/WalletIcon/dana.png') }}" alt="" class="pay1">
-                            <label for="">Dana Virtual Wallet</label>
+                            <label for="">Dana Wallet</label>
                         </Button>
                         <Button value="Gopay" class="buttonbayar" name="pemb" id="buttongopay">
                             <img src="{{ asset('images/WalletIcon/gopay.png') }}" alt="" class="pay1">
-                            <label for="">GoPay Virtual Wallet</label>
+                            <label for="">GoPay Wallet</label>
                         </Button>
                         <Button value="Shoppepay" class="buttonbayar" name="pemb" id="buttonshoppe">
                             <img src="{{ asset('images/WalletIcon/sope.png') }}" alt="" class="pay1">
-                            <label for="">Shoppe Pay Virtual Wallet</label>
+                            <label for="">Shoppe Pay wallet</label>
                         </Button>
                         <Button value="BCA Transfer" class="buttonbayar" name="pemb" id="buttonBCA">
                             <img src="{{ asset('images/WalletIcon/bca.png') }}" alt="" class="pay1">

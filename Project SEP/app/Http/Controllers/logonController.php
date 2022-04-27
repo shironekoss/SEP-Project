@@ -25,7 +25,7 @@ class logonController extends Controller
         dump($credential);
 
         $cekcustomer = Auth::attempt($credential);
-        dd($cekcustomer);
+        // dd($cekcustomer);
         if($cekcustomer){
             return redirect('selenium/menu');
         }
