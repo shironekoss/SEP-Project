@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('CssLogin/styleLogin.css') }}">
 </head>
-<body>
+<body> <br><br><br><br><br><br><br><br><br>
     @if (Session::has('pesan'))
         <div class="alert alert-danger">{{ Session::get('pesan') }}</div>
     @endif
@@ -33,6 +33,9 @@
                 </div>
                 <button type="submit" class="form-control btn btn-success" style="border-radius: 10px; font-size: 16px">Login</button>
                 </form>
+                <footer>
+                    <small style="color: white">&copy; Copyright 2022, Selenium Corporation</small>
+                </footer>
         </div>
     </div>
 </body>

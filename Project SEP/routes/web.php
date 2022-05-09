@@ -20,7 +20,7 @@ Route::get('/', function () {
     return redirect('selenium');
 });
 
-Route::prefix('selenium')->group(function (){
+Route::prefix('selenium')->middleware('sdhlogin')->group(function (){
     Route::get('/', [Home::class, "home"]);
     Route::get('aboutus', [Home::class, "aboutus"]);
     Route::get('menu', [Home::class, "menu"]);

@@ -22,7 +22,7 @@ class logonController extends Controller
             "akun_user"  => $request->username,
             "password"  => $request->password
         ];
-        dump($credential);
+        // dump($credential);
 
         $cekcustomer = Auth::attempt($credential);
         // dd($cekcustomer);

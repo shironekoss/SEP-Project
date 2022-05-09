@@ -4,10 +4,16 @@
      <a class="navbar-brand" href="#">Navbar</a>
      <a class="navbar-brand" href="#">Selamat Datang</a>
      <a href="{{ URL::to('/') }}/selenium/pesanan">
-     <div class="notificationcart">
+     <div class="notificationcart" style="margin-left: 250px;">
              <i class="fa-solid fa-cart-shopping"> </i>
              <span>Cart</span>
              <span class="badge">0</span>
+     </div>
+     <div class="notificationcart">
+         <a href="{{ url('selenium/login') }}">
+            <button style="background-color: transparent; background-repeat: no-repeat;
+            border: none; cursor: pointer; overflow: hidden; outline: none; color: red">LOGIN</button>
+         </a>
      </div>
     </a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
