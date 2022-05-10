@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PESANANCART;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use RealRashid\SweetAlert\Facades\Alert;
 use SebastianBergmann\Environment\Console;
@@ -12,19 +13,24 @@ class PesananController extends Controller
 {
     public function listorder()
     {
-        $grandtotal=0;
-        // $isikeranjang = Cart::where('users_id',Auth::user()->users_id)->get();
-        $listorder = PESANANCART::where('akun_id',1)->get();
-        foreach ($listorder as $item) {
-            // if($item->verifikasi==true){
-                $grandtotal=$grandtotal+($item->menu_relation->harga_menu * $item->quantity);
-            // }
+        if(Auth::user()==null){
+            return redirect('selenium/login');
+        }
+        else{
+            $grandtotal=0;
+            $listorder = PESANANCART::where('akun_id',Auth::user()->akun_id)->get();
+            foreach ($listorder as $item) {
+                // if($item->verifikasi==true){
+                    $grandtotal=$grandtotal+($item->menu_relation->harga_menu * $item->quantity);
+                // }
+            }
+
+            return view('RoleMeja.listpesanan',[
+                        "cart"=>$listorder,
+                        "grandtotal"=>$grandtotal
+            ]);
         }
 
-        return view('RoleMeja.listpesanan',[
-                    "cart"=>$listorder,
-                    "grandtotal"=>$grandtotal
-        ]);
     }
 
     public function update(Request $request)

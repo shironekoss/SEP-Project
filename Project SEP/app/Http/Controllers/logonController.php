@@ -39,4 +39,10 @@ class logonController extends Controller
     {
         return view('login');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('selenium');
+    }
 }

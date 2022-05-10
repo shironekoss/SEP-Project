@@ -29,6 +29,7 @@ Route::prefix('selenium')->middleware('sdhlogin')->group(function (){
     Route::post('menu/{nama_menu}/addpesanan',[Home::class, "addpesanan"]);
 
     Route::get('login', [logonController::class, "login"]);
+    Route::get('logout', [logonController::class, "logout"]);
     Route::post('cekLogin', [logonController::class, 'cekLogin']);
 
     //static pesanan
